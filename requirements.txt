@@ -1,0 +1,4 @@
+gradio==5.47
+python-dotenv==1.1
+Requests==2.32
+volcengine_python_sdk==4.0.20

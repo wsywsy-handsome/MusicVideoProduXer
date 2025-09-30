@@ -1,0 +1,14 @@
+{
+  "character_description": "A stunningly handsome Chinese man in his late 20s, with sharp yet gentle facial features, pale flawless skin, and profound dark eyes. He has long black hair partially tied up in a loose bun at the back of his head, with several strands falling naturally around his face. He wears elegant ink-wash gradient linen robes in shades of charcoal gray and off-white, with flowing brushstroke patterns. The robes feature wide sleeves that billow in the wind. The overall aesthetic is ethereal, combining traditional Chinese elements with modern xianxia fantasy style. Full body shot, cinematic lighting, soft morning light, highly detailed, photorealistic, 8K resolution.",
+  "shots": [
+    {
+      "id": 2,
+      "lyric": "晨雾轻轻掠过山的肩",
+      "stable": "中景。主角的侧影立于山顶，面向云海。晨光勾勒其轮廓，黑色中长发部分挽成发髻，身着水墨渐变苎麻长衫，外罩轻薄广袖长袍，衣袂微动。",
+      "dynamic": "摄像机从主角侧面缓慢环绕至其身后，背景的云雾加速流动，真正'掠过'山的线条。",
+      "duration": 4,
+      "sing": false,
+      "character": true
+    }
+  ]
+}

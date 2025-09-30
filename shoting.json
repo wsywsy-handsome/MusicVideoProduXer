@@ -1,0 +1,50 @@
+{
+  "character_description": "A stunningly handsome Chinese man in his late 20s, with sharp yet gentle facial features, pale flawless skin, and profound dark eyes. He has long black hair partially tied up in a loose bun at the back of his head, with several strands falling naturally around his face. He wears elegant ink-wash gradient linen robes in shades of charcoal gray and off-white, with flowing brushstroke patterns. The robes feature wide sleeves that billow in the wind. The overall aesthetic is ethereal, combining traditional Chinese elements with modern xianxia fantasy style. Full body shot, cinematic lighting, soft morning light, highly detailed, photorealistic, 8K resolution.",
+  "shots": [
+    {
+      "id": 0,
+      "lyric": "(前奏)",
+      "stable": "电影广角镜头，中国水墨山水，晨雾如白色绸带缠绕青翠山峦，水面倒映天光，超低饱和度，氛围宁静。",
+      "dynamic": "摄像机在雾中缓慢向前推进，如同悄无声息地滑行，雾气缓缓流动。",
+      "duration": 4,
+      "sing": false,
+      "character": false
+    },
+    {
+      "id": 35,
+      "lyric": "晨雾轻轻掠过山的肩",
+      "stable": "中景。主角的侧影立于山顶，面向云海。晨光勾勒其轮廓，黑色中长发部分挽成发髻，身着水墨渐变苎麻长衫，外罩轻薄广袖长袍，衣袂微动。",
+      "dynamic": "摄像机从主角侧面缓慢环绕至其身后，背景的云雾加速流动，真正'掠过'山的线条。",
+      "duration": 11,
+      "sing": false,
+      "character": true
+    },
+    {
+      "id": 3,
+      "lyric": "河水缓缓托起第一缕风",
+      "stable": "低角度特写。清澈见底的溪流，水面漂浮花瓣。构图精致，光线柔和。",
+      "dynamic": "一阵微风吹过，水面泛起细密涟漪，花瓣随之轻轻旋转、移动，仿佛被风'托起'。",
+      "duration": 3,
+      "sing": false,
+      "character": false
+    },
+    {
+      "id": 4,
+      "lyric": "你的眼神像一条小径",
+      "stable": "大特写。主角正面眼部。眼眸深邃，映出山林倒影，眼神充满探寻与温柔。黑色中长发，几缕发丝垂落脸侧。",
+      "dynamic": "镜头极缓推近瞳孔，瞳孔中的倒影逐渐模糊，化作一条发光的、通向深处的林间小径。",
+      "duration": 4,
+      "sing": true,
+      "character": true
+    },
+    {
+      "id": 5,
+      "lyric": "不说话也能抵达心中",
+      "stable": "主观镜头。沿一条被苔藓和光斑覆盖的幽静小径向前推进，尽头是温暖的光源。",
+      "dynamic": "摄像机平稳地沿小径移动，两侧植物微微后退，光晕效果渐强，象征'抵达'。",
+      "duration": 3,
+      "sing": false,
+      "character": false
+    }
+  ]
+}
