@@ -4,12 +4,13 @@ from pathlib import Path
 from shot import Shot
 from character import CharacterReference
 from SeedreamImageGenerator import SeedreamImageGenerator
-from hailuofake import HailuoVideoGenerator
+from HailuoVideoGenerator import HailuoVideoGenerator
+from comfyui import ComfyUIClient
 from dotenv import load_dotenv
 
 
 class ShotsManager:
-    def __init__(self, json_path: str, output_dir: str = "outputs"):
+    def __init__(self, json_path: str, output_dir: str = "output_final"):
         """管理一场 MV 的所有 Shot"""
         self.json_path = Path(json_path)
         self.output_dir = Path(output_dir)
@@ -29,10 +30,22 @@ class ShotsManager:
             api_key=self.hailuo_api_key,
             output_dir=self.output_dir
         )
+        self.comfyui = ComfyUIClient(
+            server_address="localhost:8190", 
+            save_dir=self.output_dir
+        )
         
         # 初始化shots和Character
         self.shots, self.character_description = self._load_shots()
-
+        # 初始化一个字典用来存放所有提示词
+        self.prompts = {}
+        for i, shot in enumerate(self.shots):
+            if shot.character_in_scene:
+                self.prompts[i] = {"pic":shot.stable_prompt, "vid":shot.dynamic_prompt}
+            else:
+                self.prompts[i] = {"pic":None, "vid":f"{shot.stable_prompt}, {shot.dynamic_prompt}"}
+        
+                
     def _load_shots(self):
         """从 JSON 文件读取配置并实例化所有 Shot"""
         with open(self.json_path, "r", encoding="utf-8") as f:
@@ -46,6 +59,7 @@ class ShotsManager:
             shot = Shot(
                 hailuo_client=self.hailuo,
                 seedream_client=self.seedream,
+                comfyui_client=self.comfyui,
                 shot_config=shot_config,
                 output_dir=self.output_dir
             )
@@ -57,16 +71,6 @@ class ShotsManager:
         print("character:", self.character_description.description)
         for shot in self.shots:
             print(f"Shot {shot.id}: {shot.lyric} (Duration: {shot.duration}s, Sing: {shot.sing})")
-
-    def generate_all_images(self):
-        """为所有 Shot 生成图像"""
-        for shot in self.shots:
-            shot.generate_image()
-
-    def generate_all_videos(self):
-        """为所有 Shot 生成视频"""
-        for shot in self.shots:
-            shot.generate_video()
 
     def get_shot_by_id(self, shot_id: int) -> Shot:
         """根据 ID 获取某个 Shot"""
@@ -87,3 +91,12 @@ class ShotsManager:
             return shot.edit_image(base_img_path=reference_dir, prompt=prompt)
         else:
             return shot.edit_image(base_img_path=self.reference_pic_dir, prompt=prompt)
+
+if __name__ == "__main__":
+    manager = ShotsManager(
+        "/root/shared-nvme/shuyiwang/MusicVideo_ProduXer/shots.json",
+        "./outputttt",
+    )
+    shot = manager.shots[1]
+    shot.video_path="/root/shared-nvme/shuyiwang/MusicVideo_ProduXer/output_final/shot_7_video_20251001_021412.mp4"
+    shot.video_lip_sync(audio_path="/root/shared-nvme/shuyiwang/MusicVideo_ProduXer/我不明白.mp3")

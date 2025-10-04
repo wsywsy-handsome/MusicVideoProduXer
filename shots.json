@@ -8,7 +8,9 @@
       "dynamic": "摄像机在雾中缓慢向前推进，如同悄无声息地滑行，雾气缓缓流动。",
       "duration": 4,
       "sing": false,
-      "character": false
+      "character": false, 
+      "startTime": "0:00", 
+      "endTime": "0:05"
     },
     {
       "id": 35,
@@ -17,7 +19,9 @@
       "dynamic": "摄像机从主角侧面缓慢环绕至其身后，背景的云雾加速流动，真正'掠过'山的线条。",
       "duration": 4,
       "sing": false,
-      "character": true
+      "character": true, 
+      "startTime": "0:05", 
+      "endTime": "0:12"
     },
     {
       "id": 3,
@@ -26,7 +30,9 @@
       "dynamic": "一阵微风吹过，水面泛起细密涟漪，花瓣随之轻轻旋转、移动，仿佛被风'托起'。",
       "duration": 3,
       "sing": false,
-      "character": false
+      "character": false, 
+      "startTime": "0:12", 
+      "endTime": "0:18"
     },
     {
       "id": 4,
@@ -35,7 +41,9 @@
       "dynamic": "镜头极缓推近瞳孔，瞳孔中的倒影逐渐模糊，化作一条发光的、通向深处的林间小径。",
       "duration": 4,
       "sing": true,
-      "character": true
+      "character": true, 
+      "startTime": "0:18", 
+      "endTime": "0:24"
     },
     {
       "id": 5,
@@ -44,7 +52,9 @@
       "dynamic": "摄像机平稳地沿小径移动，两侧植物微微后退，光晕效果渐强，象征'抵达'。",
       "duration": 3,
       "sing": false,
-      "character": false
+      "character": false, 
+      "startTime": "0:24", 
+      "endTime": "0:30"
     },
     {
       "id": 6,
@@ -53,7 +63,9 @@
       "dynamic": "摄像机从主角身后急速拉升，变为俯瞰视角，展现宏大的天地'交叉'构图。",
       "duration": 5,
       "sing": true,
-      "character": true
+      "character": true, 
+      "startTime": "0:30", 
+      "endTime": "0:37"
     },
     {
       "id": 7,
@@ -62,7 +74,9 @@
       "dynamic": "升格镜头（慢动作）。主角张臂的动作充满仪式感，风猛烈吹动其长发和广袖，仿佛与天地能量相拥。",
       "duration": 4,
       "sing": true,
-      "character": true
+      "character": true, 
+      "startTime": "0:37", 
+      "endTime": "0:43"
     },
     {
       "id": 8,
@@ -71,7 +85,9 @@
       "dynamic": "摄像机聚焦于飞舞的尘埃，然后快速拉出，变成风吹动整片芦苇荡的中景。",
       "duration": 3,
       "sing": false,
-      "character": false
+      "character": false, 
+      "startTime": "0:43", 
+      "endTime": "0:49"
     },
     {
       "id": 9,
@@ -80,142 +96,9 @@
       "dynamic": "摄像机缓慢旋转，流云快速移动，发光粒子如逆流的天河般飞向天空深处。",
       "duration": 4,
       "sing": true,
-      "character": true
-    },
-    {
-      "id": 10,
-      "lyric": "(间奏) - 歌手特写1",
-      "stable": "特写镜头。歌手（主角）正面半身，站在暗光环境中，一束顶光打亮他的面部和肩膀。他表情投入，眼神坚定地看着镜头。",
-      "dynamic": "歌手随着音乐节奏轻微晃动，深情演唱。镜头有非常缓慢的推近，突出其情感投入的状态。",
-      "duration": 4,
-      "sing": true,
-      "character": true
-    },
-    {
-      "id": 11,
-      "lyric": "晚霞在枝头轻轻晕开",
-      "stable": "透过古老窗棂或树枝剪影看晚霞，构图如古典画。霞光温暖。",
-      "dynamic": "摄像机轻微横移，霞光在树枝的缝隙中缓慢流动。",
-      "duration": 3,
-      "sing": true,
-      "character": false
-    },
-    {
-      "id": 12,
-      "lyric": "远处的钟声拉长了黄昏",
-      "stable": "长焦镜头。暮色中的古寺塔尖，惊起一群飞鸟。画面宁静。",
-      "dynamic": "升格镜头（慢动作），飞鸟缓慢飞过画面，配合虚构的悠长钟声音效，营造时间停滞感。",
-      "duration": 4,
-      "sing": false,
-      "character": false
-    },
-    {
-      "id": 13,
-      "lyric": "我听见你脚步的节奏",
-      "stable": "特写。主角赤脚走在铺满落叶的小径上，脚步稳健。水墨长衫的下摆轻轻扫过落叶。",
-      "dynamic": "跟拍脚部特写，每一步都踏在歌曲的节奏点上，落叶被轻轻踩碎。",
-      "duration": 4,
-      "sing": true,
-      "character": true
-    },
-    {
-      "id": 14,
-      "lyric": "与我心跳合成同一声",
-      "stable": "极致特写。主角将手轻按在自己胸口，闭眼倾听。面部光线柔和，长发垂肩。",
-      "dynamic": "镜头缓缓推近，背景虚化，画面随清晰的心跳声（音效）有轻微脉动感。",
-      "duration": 4,
-      "sing": false,
-      "character": true
-    },
-    {
-      "id": 15,
-      "lyric": "天地交叉 你我相通",
-      "stable": "水下镜头。主角悬浮于发着微光的湖水中，水面映照星空。他的长衫如海草般散开，黑色长发在水中飘浮。",
-      "dynamic": "摄像机从水下缓慢上升，突破水面的那一刻，画面从静谧的蓝色变为璀璨的星空。",
-      "duration": 4,
-      "sing": true,
-      "character": true
-    },
-    {
-      "id": 16,
-      "lyric": "不必言语 也能相拥",
-      "stable": "极近距离特写。主角的侧脸与肩膀，他闭着眼，将额头轻轻抵在一棵古老的树干上，表情安宁，仿佛在与古树交流。",
-      "dynamic": "镜头缓慢环绕主角的头部，模拟一种亲昵、环绕的'相拥'感。",
-      "duration": 4,
-      "sing": true,
-      "character": true
-    },
-    {
-      "id": 17,
-      "lyric": "一粒尘 一阵风",
-      "stable": "创意镜头。主角的手掌心中，托着一枚发光的水晶或露珠，其内部有微小的尘埃在光流中旋转。",
-      "dynamic": "镜头聚焦于水晶内部，尘埃如星系般旋转，然后一阵风吹过，主角的手轻轻握拢。",
-      "duration": 3,
-      "sing": false,
-      "character": true
-    },
-    {
-      "id": 18,
-      "lyric": "都把我们的名字带向天空",
-      "stable": "大远景。璀璨的银河星空下，主角一个小小的剪影站在山巅，他扬起手，释放出无数光点，飞向星河。",
-      "dynamic": "摄像机朝向星空不断拉升，光点汇入银河，星辰闪烁，画面浩瀚而浪漫。",
-      "duration": 5,
-      "sing": true,
-      "character": true
-    },
-    {
-      "id": 19,
-      "lyric": "(桥段前) - 歌手特写2",
-      "stable": "动态特写。歌手（主角）在风中演唱，风将其长发和衣襟向后吹拂。他眉头微蹙，表情充满张力，背景是模糊的流动光影。",
-      "dynamic": "摄像机围绕歌手快速半环绕运动，产生动态模糊的背景，突出歌手稳定而充满力量的神情。",
-      "duration": 3,
-      "sing": true,
-      "character": true
-    },
-    {
-      "id": 20,
-      "lyric": "一瞬间 山与海都沉默",
-      "stable": "静态延时摄影。以宏伟雪山为前景，星空轨迹在夜空中划出巨大弧线，但山海静止。",
-      "dynamic": "星辰飞速流动，山海轮廓纹丝不动，形成极致动与静的对比，体现'沉默'。",
-      "duration": 5,
-      "sing": false,
-      "character": false
-    },
-    {
-      "id": 21,
-      "lyric": "只剩我们的呼吸",
-      "stable": "大特写。主角的鼻尖与嘴唇，呼出的气息在寒冷的夜空中凝成白雾。",
-      "dynamic": "镜头焦点随呼吸的节奏轻微变化，白雾缓缓升起、消散。",
-      "duration": 4,
-      "sing": false,
-      "character": true
-    },
-    {
-      "id": 22,
-      "lyric": "在彼此的温度里找到漫长的答案",
-      "stable": "中景。主角坐在一堆篝火旁，双手虚握靠近火焰。温暖的火光在他释然的脸上跳动，水墨长衫被火光映红。",
-      "dynamic": "他缓缓睁开眼，看向镜头，眼神充满彻悟与安宁，嘴角泛起一丝微笑。",
-      "duration": 5,
-      "sing": true,
-      "character": true
-    },
-    {
-      "id": 23,
-      "lyric": "天地交叉 你我相通 晚风轻拂 影子相融",
-      "stable": "长镜头。主角的剪影漫步走向远方地平线，月光将他的影子拉长，与大地融为一体。宽袖长袍的轮廓在月光下清晰可见。",
-      "dynamic": "摄像机固定不动，主角逐渐走远、变小，最终消失，只留下月光下的天地。",
-      "duration": 10,
-      "sing": false,
-      "character": true
-    },
-    {
-      "id": 24,
-      "lyric": "(尾奏)",
-      "stable": "空镜。一轮皎洁的明月挂在深蓝色夜空，画面逐渐淡出至纯黑。",
-      "dynamic": "画面缓慢变暗，明月是最后消失的光点，音乐声渐弱。",
-      "duration": 5,
-      "sing": false,
-      "character": false
+      "character": true, 
+      "startTime": "0:49", 
+      "endTime": "0:55"
     }
   ]
 }

@@ -7,7 +7,7 @@ import os
 import asyncio
 
 class MVGeneratorUI:
-    def __init__(self, shots_json_path: str = "shoted.json"):
+    def __init__(self, shots_json_path: str = "shots.json"):
         self.manager = ShotsManager(shots_json_path)
         self.current_shots_data = []
         self.script_json_dir = shots_json_path
@@ -29,8 +29,8 @@ class MVGeneratorUI:
             self.current_shots_data.append([
                 shot.id,
                 shot.lyric,
-                shot.stable,
-                shot.dynamic,
+                shot.stable_prompt,
+                shot.dynamic_prompt,
                 shot.duration,
                 shot.sing
             ])
@@ -61,7 +61,7 @@ class MVGeneratorUI:
                     self.manager.generate_first_frame,
                     shot_index=i,
                     reference_dir=self.manager.reference_pic_dir,
-                    prompt=shot.stable
+                    prompt=shot.stable_prompt
                 ): (i, shot.id)
                 for i, shot in enumerate(self.manager.shots) if getattr(shot, "character_in_scene", False)
             }
@@ -91,6 +91,7 @@ class MVGeneratorUI:
             futures = {
                 executor.submit(
                     shot.generate_video,
+                    prompt=self.manager.prompts[i]["vid"],
                     duration=shot.duration,
                     use_image=shot.character_in_scene
                 ): (i, shot.id)
@@ -127,6 +128,7 @@ class MVGeneratorUI:
                     
                     init_status = gr.Textbox(label="初始化状态", interactive=False)
                     shots_table = gr.Dataframe(
+                        value=self.list_shots,
                         headers=["ID", "歌词", "静态Prompt", "动态Prompt", "时长", "是否唱歌"],
                         datatype=["number", "str", "str", "str", "number", "bool"],
                         interactive=False,
@@ -167,7 +169,7 @@ class MVGeneratorUI:
             if shot.character_in_scene:
                 num_to_be_edited += 1
         with gr.Blocks() as section:
-            gr.Markdown("## 👥 批量管理 (⚠️暂只支持默认提示词!!!!)")
+            gr.Markdown("## 👥 批量管理 (以保存过的prompt为准)")
             
             with gr.Row():
                 batch_fir_btn = gr.Button(f"一键生成第一帧 💰估价: ¥{0.2*num_to_be_edited}", variant="secondary")
@@ -210,7 +212,7 @@ class MVGeneratorUI:
                                 )
                                 edit_prompt = gr.Textbox(
                                     label="修改Prompt (可选)",
-                                    value=shot.stable,
+                                    value=shot.stable_prompt,
                                     lines=2
                                 )
                                 edit_img_btn = gr.Button("修改图像", variant="secondary")
@@ -241,25 +243,46 @@ class MVGeneratorUI:
                             gr.Markdown("### 生成视频")
                             # 如果角色不在分镜中, 就由hailuo掌管所有提示词
                             if shot.character_in_scene:
-                                prompt = shot.dynamic
+                                prompt = shot.dynamic_prompt
                             else:
-                                prompt = shot.stable + shot.dynamic
+                                prompt = shot.stable_prompt + shot.dynamic_prompt
                             video_prompt = gr.Textbox(
                                 label="视频Prompt (可选)",
                                 value=prompt,
                                 lines=2
                             )
+                            
                             video_duration = gr.Number(
                                 label="视频时长(秒, 6s以下生成6s, 6s以上生成10s)",
                                 value=shot.duration
                             )
-                            video_btn = gr.Button("生成视频", variant="primary")
+                            video_btn = gr.Button("生成视频 (prompt以文本框中为准)", variant="primary")
                             video_status = gr.Textbox(label="状态", interactive=False)
                         
                         with gr.Column():
                             gr.Markdown("### Prompt说明")
-                            gr.Markdown(f"**静态Prompt:** {shot.stable}")
-                            gr.Markdown(f"**动态Prompt:** {shot.dynamic}")
+                            gr.Markdown(f"**静态Prompt:** {shot.stable_prompt}")
+                            gr.Markdown(f"**动态Prompt:** {shot.dynamic_prompt}")
+                            # 提供修改和恢复视频提示词的按钮
+                            save_video_prompt = gr.Button("保存提示词 (不会修改原始json)")
+                            restore_video_prompt = gr.Button("恢复默认提示词")
+                            edit_video_prompt_output = gr.Textbox(label="修改结果", interactive=False)
+                            save_video_prompt.click(
+                                fn=lambda prompt: self._edit_prompt(True, prompt, shot_index),
+                                inputs=video_prompt,
+                                outputs=edit_video_prompt_output
+                            )
+                            #提供回复默认视频提示词的按钮
+                            restore_video_prompt.click(
+                                fn=lambda: (
+                                    self._restore_prompt(True, shot_index),
+                                    shot.dynamic_prompt if shot.character_in_scene else f"{shot.stable_prompt}, {shot.dynamic_prompt}"
+                                ),
+                                outputs=[edit_video_prompt_output, video_prompt]
+                            )
+                        # 对口型按钮
+                        lip_sync_btn = gr.Button("对口型", variant="primary")
+                        lip_sync_status = gr.Textbox(label="状态", interactive=False)
                     
                     video_output = gr.Video(
                         label="视频预览",
@@ -267,12 +290,24 @@ class MVGeneratorUI:
                         value=shot.video_path
                     )
                     
+                    lip_sync_output = gr.Video(
+                        label="视频预览",
+                        height= 400,
+                        value=shot.lip_sync_path
+                    )
+                    
                     # 保存组件引用
                     self.shot_components[shot_index]["vid_output"] = video_output
+                    
+                    # 事件绑定
                     video_btn.click(
                         fn=lambda prompt, duration: self._generate_video(shot_index, prompt, duration, shot.character_in_scene),
                         inputs=[video_prompt, video_duration],
                         outputs=[video_output, video_status]
+                    )
+                    lip_sync_btn.click(
+                        fn=lambda : self._lip_sync(shot_index),
+                        outputs=[lip_sync_output, lip_sync_status]
                     )
                     
                     
@@ -308,7 +343,27 @@ class MVGeneratorUI:
             return path, f"✅ 分镜 {shot_id} 视频生成成功"
         except Exception as e:
             return None, f"❌ 视频生成失败: {str(e)}"
+    def _lip_sync(self, shot_index: int):
+        try:
+            shot = self.manager.shots[shot_index]
+            saved_paths = shot.video_lip_sync(
+                audio_path = "/root/shared-nvme/shuyiwang/MusicVideo_ProduXer/我不明白.mp3",
+            )
+            return str(saved_paths[-1]), f"done!"
+        except Exception as e:
+            return None, f"failed!{str(e)}"
     
+    def _edit_prompt(self, is_video_prompt:bool, prompt:str, index:int):
+        if is_video_prompt:
+            self.manager.prompts[index]["vid"]=prompt
+            return f"分镜index=={index}的视频🎬提示词已保存修改!"
+    def _restore_prompt(self, is_video_prompt:bool, index:int):
+        shot = self.manager.shots[index]
+        if is_video_prompt:
+            self.manager.prompts[index]["vid"]=shot.dynamic_prompt if shot.character_in_scene else f"{shot.stable_prompt}, {shot.dynamic_prompt}"
+            return f"分镜index=={index}的视频🎬提示词已恢复默认!"
+    
+        
     def create_ui(self) -> gr.Blocks:
         """创建完整的UI界面"""
         with gr.Blocks(theme=gr.themes.Soft(), title="MV分镜生成工具") as demo:
@@ -324,6 +379,7 @@ class MVGeneratorUI:
                 with gr.Tabs() as tabs:
                     # 为每个shot创建一个Tab
                     for shot_index, shot in enumerate(self.manager.shots):
+                        print(shot.start_time)
                         with gr.Tab(f"分镜 {shot.id}"):
                             self.create_shot_detail_section(shot_index=shot_index)
             batch_section = self.create_batch_control_section()
@@ -332,7 +388,7 @@ class MVGeneratorUI:
 # 使用示例
 if __name__ == "__main__":
     # 创建UI实例
-    ui = MVGeneratorUI("shoting.json")
+    ui = MVGeneratorUI("shots.json")
     
     # 生成UI并启动
     demo = ui.create_ui()

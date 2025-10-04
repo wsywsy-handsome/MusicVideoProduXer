@@ -1,0 +1,176 @@
+{
+"character_description": "A young woman in her late 20s, with a slender build, natural brown curly hair that falls loosely around her face, and bright, curious eyes. She wears subtle makeup. She has a thin silver necklace with a small saxophone pendant, a beaded bracelet on her wrist, a dark blue vintage beret, and carries a canvas tote bag with music-themed stickers. Her outfit consists of a retro A-line dress in warm red or mustard yellow, a beige knitted cardigan, and comfortable brown flat shoes. The overall style is artistic and modest, reflecting an optimistic urban dreamer. Full body shot, cinematic lighting, soft colors, highly detailed, photorealistic, 8K resolution.",
+"shots": [
+{
+"id": 1,
+"lyric": "Soft piano notes fade in, with a gentle saxophone melody",
+"stable": "中景视角，主角的卧室，清晨。主角躺在床上，眼睛微闭，手指轻放在床单上。房间内有单人床、书架、老式收音机。色调柔和蓝色和暖黄色，灯光朦胧，晨光从窗户照射。散落的乐谱和素描本在床边。",
+"dynamic": "摄像机从窗户外部缓慢推入房间，聚焦在收音机上。主角保持躺姿，眼睛微闭，手指轻轻移动。镜头淡入。",
+"duration": 4,
+"sing": false,
+"character": true
+},
+{
+"id": 2,
+"lyric": "Whispering of streets where hopes begin",
+"stable": "空镜视角，城市街道，清晨，路灯未熄灭。街道湿漉，反射霓虹灯光。色调深蓝色和金色。",
+"dynamic": "摄像机从高空缓慢下移，街道上有早行人影闪过。镜头运动平滑。",
+"duration": 4,
+"sing": false,
+"character": false
+},
+{
+"id": 3,
+"lyric": "In the hum of the city, a soul learns to spin...",
+"stable": "中景视角，主角站在公寓窗前，手持素描本，面向窗外。室内暖色调，窗外城市冷色调。灯光柔和。",
+"dynamic": "摄像机从主角背后特写肩膀，然后拉远展示窗外城市全景。主角翻动素描本，页面涂鸦轻微旋转。镜头缓慢旋转。",
+"duration": 4,
+"sing": false,
+"character": true
+},
+{
+"id": 4,
+"lyric": "I wake to the rhythm of rain on the pane,",
+"stable": "中景视角，主角躺在床上，刚醒来，眼睛睁开，看向窗户。窗户玻璃有雨滴滑落。房间内色调温暖，窗框木质。",
+"dynamic": "摄像机聚焦窗户雨滴，雨滴映出主角倒影。然后镜头拉回，显示主角伸手触摸窗户并伸懒腰。",
+"duration": 4,
+"sing": false,
+"character": true
+},
+{
+"id": 5,
+"lyric": "A coffee-stained morning, a familiar train.",
+"stable": "中景视角，小厨房场景，主角站在桌旁，手持咖啡杯。咖啡杯有咖啡渍，咖啡壶在桌上。色调棕色和米色。背景有通勤背包。",
+"dynamic": "主角冲泡咖啡，咖啡溅出在桌上。她拿起杯子，走向门。镜头切到火车站台，列车进站。摄像机从咖啡杯特写摇到列车全景。",
+"duration": 4,
+"sing": false,
+"character": true
+},
+{
+"id": 6,
+"lyric": "The crowd moves in waves, a sea of gray suits,",
+"stable": "全景视角，地铁站内，人群拥挤，穿着灰色西装。色调灰色和蓝色，主角红色连衣裙突出，站在人群中。",
+"dynamic": "摄像机从高处俯拍，人群像波浪流动。主角穿梭其中，镜头使用慢动作，她的动作轻盈。",
+"duration": 4,
+"sing": false,
+"character": true
+},
+{
+"id": 7,
+"lyric": "But I trace the light in dusty commutes.",
+"stable": "中景视角，地铁车厢内，主角坐在座位上，光线从窗户射入，灰尘在光柱中飞舞。色调温暖，光柱金色。",
+"dynamic": "主角手指在空中追踪光柱。摄像机从她的视角拍摄光柱，然后切到她的面部特写，她微笑。",
+"duration": 4,
+"sing": false,
+"character": true
+},
+{
+"id": 8,
+"lyric": "My hands hold the maps of dreams yet unseen,",
+"stable": "特写视角，主角的手拿着素描本，页面画有城市地图和梦想符号。色调红色和蓝色突出。",
+"dynamic": "她的手轻抚素描本，摄像机从手部特写缓慢拉远，显示她在地铁上绘画。背景模糊。",
+"duration": 4,
+"sing": false,
+"character": true
+},
+{
+"id": 9,
+"lyric": "A sketchbook of wonders, a life in between.",
+"stable": "特写视角，素描本页面，涂鸦混合现实与幻想，如城市天际线变乐谱。色调梦幻暖色。主角手在页面旁。",
+"dynamic": "主角翻页，涂鸦线条舞动形成爵士乐符号。摄像机推入页面，过渡到下一个镜头。",
+"duration": 4,
+"sing": false,
+"character": true
+},
+{
+"id": 10,
+"lyric": "For in this concrete maze, where shadows may fall,",
+"stable": "全景视角，城市街道，高楼林立，阴影交错。色调灰色和深蓝色，有金色光点。主角行走在街道上。",
+"dynamic": "阴影掠过主角，她昂首挺胸。摄像机从低角度拍摄，她的影子拉长。",
+"duration": 4,
+"sing": false,
+"character": true
+},
+{
+"id": 11,
+"lyric": "I hear a jazz tune that conquers it all.",
+"stable": "中景视角，街头爵士乐队表演，萨克斯风手和鼓手。色调 vibrant 红色和金色。主角站在一旁观看。",
+"dynamic": "主角停下脚步，摄像机环绕她旋转，切到乐队特写。",
+"duration": 4,
+"sing": false,
+"character": true
+},
+{
+"id": 12,
+"lyric": "Oh, city lights and little dreams,",
+"stable": "全景视角，夜晚城市天际线，霓虹灯闪烁。色调金色和蓝色。主角站在天台边缘，张开双臂。",
+"dynamic": "摄像机从城市全景缓慢推近，主角保持姿势。镜头使用广角。",
+"duration": 4,
+"sing": false,
+"character": true
+},
+{
+"id": 13,
+"lyric": "You paint the world in golden streams.",
+"stable": "特写视角，城市灯光，光晕效果如金色水流。色调温暖高光。主角的手在画面中，捕捉灯光。",
+"dynamic": "主角用手捕捉灯光，灯光在她手中流动。摄像机从手部特写拉远，显示她跳舞。",
+"duration": 4,
+"sing": false,
+"character": true
+},
+{
+"id": 14,
+"lyric": "Through bustling streets and silent schemes,",
+"stable": "中景视角，繁忙街道，人群流动。色调冷色。主角从街道走入小巷。",
+"dynamic": "主角从繁忙街道走入小巷，摄像机跟随，节奏从快切到慢。她在小巷中微笑。",
+"duration": 4,
+"sing": false,
+"character": true
+},
+{
+"id": 15,
+"lyric": "We dance in hope, or so it seems.",
+"stable": "中景视角，小巷中，主角独自跳舞，背景涂鸦墙。色调浪漫红色和黄色。",
+"dynamic": "她即兴舞蹈，动作轻盈。摄像机环绕拍摄，镜头慢动作。",
+"duration": 4,
+"sing": false,
+"character": true
+},
+{
+"id": 16,
+"lyric": "A minor key to brighter days,",
+"stable": "中景视角，咖啡馆内，主角调试老式收音机。色调柔和棕色和蓝色。",
+"dynamic": "她转动收音机旋钮，摄像机特写手指和收音机，镜头淡入明亮光效。",
+"duration": 4,
+"sing": false,
+"character": true
+},
+{
+"id": 17,
+"lyric": "In every step, a joyful phrase.",
+"stable": "中景视角，咖啡馆内，主角端着托盘行走。色调温暖灯光。",
+"dynamic": "她的脚步移动，摄像机从脚部特写摇到面部，她向顾客微笑。",
+"duration": 4,
+"sing": false,
+"character": true
+},
+{
+"id": 18,
+"lyric": "The night may fall, the stars may gleam,",
+"stable": "全景视角，夜空，星星和城市灯光交织。色调深蓝与金色。主角站在街头仰望。",
+"dynamic": "摄像机从星空缓慢下移到主角站立仰望。星星闪烁，镜头使用延时效果。",
+"duration": 4,
+"sing": false,
+"character": true
+},
+{
+"id": 19,
+"lyric": "But our hearts beat in a timeless theme.",
+"stable": "特写视角，主角的胸口，手放在心脏位置。色调红色，背景模糊。",
+"dynamic": "她的手放在胸口，摄像机缓慢推近，她闭眼微笑，镜头淡出。",
+"duration": 4,
+"sing": false,
+"character": true
+}
+]
+}
